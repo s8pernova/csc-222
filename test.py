@@ -1,0 +1,1 @@
+print(c := round((f := float(input("Enter °F: "))) - 32 * 5/9, 1))
