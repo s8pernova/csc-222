@@ -68,7 +68,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         
         System.out.println("~~~~~~~~~~ TESTING TIME CLASS ~~~~~~~~~~");
-        Time time1 = new Time();
+        Times time1 = new Times();
         
         System.out.println("\nEnter time information:");
         time1.input();
@@ -78,7 +78,7 @@ public class Main {
         
         // Testing with another Time object
         System.out.println("\n\nCreating another Time object:");
-        Time time2 = new Time();
+        Times time2 = new Times();
         time2.input();
         System.out.println("\nDisplaying the second time:");
         time2.print();
