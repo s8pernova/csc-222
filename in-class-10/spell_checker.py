@@ -1,18 +1,16 @@
-words = [
-    "apple",
-    "bear",
-    "cat",
-    "dog",
-    "egg",
-    "file",
-    "google",
-    "hello",
-    "iphone",
-    "jeep",
-]
+def read_words_from_file(file_name) -> list[str]:
+    words = []
+    with open(file_name) as file:
+        for line in file:
+            word = line.strip().lower()
+            if word:
+                words.append(word)
+    return words
 
 
-def main():
+def main() -> None:
+    file = "/home/achrunaway/git-projects/csc-222/in-class-10/dict10.txt"
+    words = read_words_from_file(file)
     flag = True
     while flag:
         user_word = input("Search for: ").lower()
