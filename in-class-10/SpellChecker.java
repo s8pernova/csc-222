@@ -7,21 +7,17 @@ public class SpellChecker {
     public static void main(String[] args) {
         // Read words from dictionary file
         ArrayList<String> words = new ArrayList<>();
-        
-        try {
-            String filePath = "/home/achrunaway/git-projects/csc-222/in-class-10/dict10.txt";
-            File file = new File(filePath);
-            Scanner fileScanner = new Scanner(file);
-            
+        String filePath = "/home/achrunaway/git-projects/csc-222/in-class-10/dict10.txt";
+        File file = new File(filePath);
+        try (Scanner fileScanner = new Scanner(file)) {
             while (fileScanner.hasNextLine()) {
                 String word = fileScanner.nextLine().trim();
                 if (!word.isEmpty()) {
                     words.add(word.toLowerCase());
                 }
             }
-            fileScanner.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Error: file not found.");
+            System.err.println("Dictionary file not found: " + filePath);
             return;
         }
         
